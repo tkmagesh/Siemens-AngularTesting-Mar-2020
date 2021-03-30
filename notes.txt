@@ -107,3 +107,10 @@ test-2 (verify 'Good Evening')
 
 
 
+Jasmine
+    describe => test class
+    it => test case
+    expect => assertion api
+    toBe, etc => types of assertions (matchers)
+
+    xdescribe, xit => exclude tests
