@@ -1,0 +1,109 @@
+Name
+Experience
+Primary Skillset
+Experience in Angular
+Is Angular Testing New for you?
+If not, do you have any specific expectations from this training
+
+
+three.js 
+Forms
+Observables
+Rxjs Pipes
+Lifecycle methods
+Promises
+
+ob$.pipe(
+    map(),
+    filter()
+)
+
+predicate for the map
+how the map operator filters based on the predicate
+
+Angular Building Blocks
+    Module
+        Registry of application entities
+        Factory of your entities
+
+    Component
+        Encapsulation of Presentation (html + css) + State + User Interaction Behavior
+            Testing Concerns - Given the state, test the presentation
+                             - Given the interaction, test the state changes
+                             - Given the presentation, test the interaction
+
+    Directive
+        DOM manipulation
+            structural directive
+                Changes the structure of the dom tree (by adding or removing nodes)
+
+            attribute directive
+                changes the attributes of existing dom nodes
+                DOESNT change the structure of the dom tree (by adding or removing dom nodes)
+
+    Pipe
+        Transforms the data for presentation
+        Performance
+        Testing concern 
+            - Given the data, verify the output if the transformation is correct
+        
+    Service
+        NON UI responsibilities
+            To Shate state
+            Inter-component communication
+
+Single Responsibility Principle
+Dependency Inversion Principle
+    Dependencies should not be CREATED and USED in the same entity
+    Creation should be separated from the usage
+
+
+Greeter
+    - greet(name)
+        => 'Hi {name}, Have a nice day!' OR 'Hi {name} Good Evening'
+
+class TimeService{
+    getCurrent(){
+        return new Date()
+    }
+}
+
+class Greeter{
+    constructor(private ts : TimeService){
+
+    }
+    greet(name){
+        if (this.ts.getCurrent().getHours() < 16){
+            return `Hi ${name}, Have a nice day!`
+        } else {
+            return `Hi ${name}, Good Evening`
+        }
+    }
+}
+
+class FakeMorningTimeService{
+    getCurrent(){
+        return new Date('10-Mar-2021 9:00:00')
+    }
+}
+
+class FakeEveningTimeService{
+    getCurrent(){
+        return new Date('10-Mar-2021 18:00:00')
+    }
+}
+
+test-1 (verify 'Have a nice day')
+    const mts = new FakeMorningTimeService();
+    const greeter = new Greeter(mts);
+    const msg = greeter.greet('Magesh')
+    verify(msg).toBe('Hi Magesh, Have a nice day!')
+
+test-2 (verify 'Good Evening')
+    const ets = new FakeEveningTimeService()
+    const greeter = new Greeter(ets);
+    const msg = greeter.greet('Magesh')
+    verify(msg).toBe('Hi Magesh, Good Evening!')
+
+
+
