@@ -1,0 +1,48 @@
+{
+  "bugs": [
+    {
+      "id": 3,
+      "name": "Data integrity checks failed",
+      "isClosed": false,
+      "createdAt": "2020-12-11T10:39:20.648Z"
+    },
+    {
+      "id": 5,
+      "name": "User actions not recognized",
+      "isClosed": true,
+      "createdAt": "2021-01-11T05:28:42.900Z"
+    },
+    {
+      "id": 6,
+      "name": "Application is not responding",
+      "isClosed": true,
+      "createdAt": "2021-02-05T07:01:32.030Z"
+    },
+    {
+      "id": 8,
+      "name": "Server communication failure",
+      "isClosed": false,
+      "createdAt": "2021-03-05T09:58:34.209Z",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet.",
+      "isActive": true
+    },
+    {
+      "id": 9,
+      "name": "Server not working",
+      "isClosed": false,
+      "createdAt": "2021-03-05T10:59:32.443Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet.",
+      "name": "Bug Tracker"
+    },
+    {
+      "id": 2,
+      "desc": "Sint deserunt laborum laborum amet labore dolore irure occaecat voluptate nulla enim est culpa. Exercitation deserunt aliqua non eiusmod culpa culpa. Dolore fugiat irure laboris veniam enim eiusmod nostrud consectetur reprehenderit eu. Aliquip irure non ut adipisicing eu elit quis ad aliqua elit laborum ad culpa eiusmod. Sit sint proident non culpa Lorem. Enim culpa non culpa eiusmod pariatur nostrud qui. Nostrud fugiat officia elit eu sit magna laboris tempor eiusmod exercitation aute aliqua commodo sit.",
+      "name": "Payroll Master"
+    }
+  ]
+}

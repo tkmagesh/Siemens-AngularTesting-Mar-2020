@@ -5,6 +5,8 @@ import moment from "moment";
     name : 'elapsed'
 })
 export class ElapsedPipe implements PipeTransform{
+    //storage : Storage = window.localStorage;
+
     constructor(@Inject('MOMENT') private moment : any) {
 
     }
