@@ -1,11 +1,11 @@
 import { Inject, Pipe, PipeTransform } from "@angular/core";
-
+import moment from "moment";
 
 @Pipe({
     name : 'elapsed'
 })
 export class ElapsedPipe implements PipeTransform{
-    constructor(@Inject('MOMENT') private moment : any){
+    constructor(@Inject('MOMENT') private moment : any) {
 
     }
     transform(value: any, ...args: any[]) {

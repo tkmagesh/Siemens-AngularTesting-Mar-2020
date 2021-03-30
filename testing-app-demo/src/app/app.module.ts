@@ -6,7 +6,7 @@ import { ElapsedPipe } from './pipes/elapsed.pipe';
 import { GreeterService } from './services/greeter.service';
 import { TimerService } from './services/timer.service';
 
-import * as moment from 'moment';
+import moment from 'moment';
 
 @NgModule({
   declarations: [
