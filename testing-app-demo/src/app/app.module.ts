@@ -6,6 +6,8 @@ import { ElapsedPipe } from './pipes/elapsed.pipe';
 import { GreeterService } from './services/greeter.service';
 import { TimerService } from './services/timer.service';
 
+import * as moment from 'moment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,8 +17,9 @@ import { TimerService } from './services/timer.service';
     BrowserModule
   ],
   providers: [
-    GreeterService,
+    { provide : GreeterService, useClass:GreeterService },
     TimerService,
+    { provide: 'MOMENT', useValue : moment}
   ],
   bootstrap: [AppComponent]
 })
