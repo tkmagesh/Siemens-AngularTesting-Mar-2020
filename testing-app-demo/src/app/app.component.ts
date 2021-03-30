@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { Bug } from './models/bug';
+import { BugApiService } from './services/bugApi.service';
 import { ProductsService } from './services/products.service';
 
 @Component({
@@ -10,14 +12,16 @@ import { ProductsService } from './services/products.service';
 export class AppComponent implements OnInit {
   title = 'testing-app-demo';
   //products = 
-  products : any;
+  bugs : Bug[] = []
   newProductName : string = '';
 
-  constructor (private productsService : ProductsService){
+  constructor (private bugApiService : BugApiService){
 
   }
   ngOnInit(){
-    this.products = this.productsService.getAll();
+    this.bugApiService
+      .getAll()
+      .subscribe(bugs => this.bugs = bugs)
   }
 
   getElapsed(data : string) : string{

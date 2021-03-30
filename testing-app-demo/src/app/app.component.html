@@ -1,14 +1,18 @@
 <h1>Testing App</h1>
 <hr>
+<!-- <label>Product Name :</label>
+<input type="text" (input)="newProductName = $any($event.target).value" />
+<input type="button" value="Add New" />
+<div>{{newProductName}}</div>
 <ol>
-  <label>Product Name :</label>
-  <input type="text" (input)="newProductName = $any($event.target).value" />
-  <input type="button" value="Add New" />
-  <div>{{newProductName}}</div>
+  
 
   <li *ngFor="let product of products">
     <span>{{product.name}}</span>
     <span> - Updated : </span>
     <span>{{ product.lastUpdated | elapsed }}</span>
   </li>
+</ol> -->
+<ol>
+  <li *ngFor="let bug of bugs">{{bug.name}}</li>
 </ol>

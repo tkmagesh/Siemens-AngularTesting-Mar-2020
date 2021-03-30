@@ -114,3 +114,13 @@ Jasmine
     toBe, etc => types of assertions (matchers)
 
     xdescribe, xit => exclude tests
+
+Testing Rest service calls
+    @angular/common/http/testing
+        HttpClientTestingModule
+        HttpTestingController
+
+    APIs for service calls
+        @angular/common/http
+            HttpClientModule
+            HttpClient
