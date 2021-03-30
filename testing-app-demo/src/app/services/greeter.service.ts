@@ -1,5 +1,7 @@
+import { Injectable } from "@angular/core";
 import { TimerService } from "./timer.service";
 
+@Injectable()
 export class GreeterService{
     constructor(private timerService : TimerService){
 
