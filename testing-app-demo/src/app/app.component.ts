@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testing-app-demo';
+  lastUpdated = new Date('2020-12-11T10:39:20.648Z');
 }

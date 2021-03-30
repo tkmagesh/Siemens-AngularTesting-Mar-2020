@@ -5,9 +5,12 @@ import { TestBed } from "@angular/core/testing";
 describe("Greeter Service", () => {
     it ("should interact with the timer service when greeted and return 'Have a nice day!", () => {
         //Arrange
-            const timerSpy = jasmine.createSpyObj("TimerService", {
+            /* const timerSpy = jasmine.createSpyObj("TimerService", {
                 getCurrent : new Date('31-Mar-2021 9:00:00')
-            });
+            }); */
+            const timerSpy = jasmine.createSpyObj("TimerService", ["getCurrent"]);
+            timerSpy.getCurrent.and.returnValue(new Date('31-Mar-2021 9:00:00'))
+            
             TestBed.configureTestingModule({
                 providers : [
                     GreeterService,
@@ -24,6 +27,9 @@ describe("Greeter Service", () => {
         //Assert
             expect(timerSpy.getCurrent).toHaveBeenCalledTimes(1);
             expect(result).toBe(expectedResult);
+
+         
+            
     })
 
     it ("should interact with the timer service when greeted and return 'Good Evening!", () => {
