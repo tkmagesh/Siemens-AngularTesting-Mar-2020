@@ -9,10 +9,13 @@ import { TimerService } from './services/timer.service';
 
 import moment from 'moment';
 
+import { GreeterComponent } from './greeter/greeter.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ElapsedPipe
+    ElapsedPipe,
+    GreeterComponent
   ],
   imports: [
     BrowserModule

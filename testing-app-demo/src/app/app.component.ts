@@ -19,9 +19,9 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(){
-    this.bugApiService
+    /* this.bugApiService
       .getAll()
-      .subscribe(bugs => this.bugs = bugs)
+      .subscribe(bugs => this.bugs = bugs) */
   }
 
   getElapsed(data : string) : string{
