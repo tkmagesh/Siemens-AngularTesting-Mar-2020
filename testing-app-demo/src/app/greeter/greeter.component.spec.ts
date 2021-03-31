@@ -6,7 +6,7 @@ import { GreeterComponent } from './greeter.component';
 describe("Greeter Component", () => {
     let fixture : ComponentFixture<GreeterComponent>;
     let component : GreeterComponent;
-
+    let el : DebugElement;
     beforeEach(waitForAsync(() => {
          TestBed.configureTestingModule({
             declarations: [ GreeterComponent ]
@@ -15,6 +15,7 @@ describe("Greeter Component", () => {
         .then(() => {
                 fixture = TestBed.createComponent(GreeterComponent),
                 component = fixture.componentInstance;
+                el = fixture.debugElement;
         })
     }));
 
@@ -25,8 +26,38 @@ describe("Greeter Component", () => {
     it("should display the message", () => {
         component.message = 'Hi there!';
         fixture.detectChanges();
-        let el : DebugElement = fixture.debugElement;
         let messageEle = el.query(By.css('div.highlight'));
-        expect(messageEle.nativeElement.textContent).toBe('Hi there!')
-    })
+        let span = messageEle.query(By.css('span'));
+        expect(span.nativeElement.textContent).toBe('Hi there!')
+    });
+
+    it("message element should have the highlight class", () => {
+        component.message = 'Hi there!';
+        fixture.detectChanges();
+        let messageEle = el.query(By.css('div'));
+        expect(messageEle.nativeElement.classList.contains('highlight')).toBeTrue();
+    });
+
+    it("should display the message for the user", () => {
+        component.onBtnGreetClick('Magesh');
+        fixture.detectChanges();
+        let messageEle = el.query(By.css('div.highlight'));
+        let span = messageEle.query(By.css('span'));
+        expect(span.nativeElement.textContent).toBe('Hi Magesh, Have a nice day!');
+    });
+
+    it("should display the message for the userName in the textbox", () => {
+        let textBoxEle = el.query(By.css('input[type="text"]'));
+        textBoxEle.nativeElement.value = "Magesh";
+        //fixture.detectChanges();
+        console.dir(textBoxEle.nativeElement);
+
+        let btnGreet = el.query(By.css('#btnGreet'));
+        btnGreet.triggerEventHandler('click', { button : 0 });
+        fixture.detectChanges();
+
+        let messageEle = el.query(By.css('div.highlight'));
+        let span = messageEle.query(By.css('span'));
+        expect(span.nativeElement.textContent).toBe('Hi Magesh, Have a nice day!');
+    });
 })
