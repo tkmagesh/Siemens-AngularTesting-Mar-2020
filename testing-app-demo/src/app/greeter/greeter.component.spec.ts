@@ -48,8 +48,10 @@ describe("Greeter Component", () => {
 
     it("should display the message for the userName in the textbox", () => {
         let textBoxEle = el.query(By.css('input[type="text"]'));
+        
+        //textBoxEle.triggerEventHandler('input', { target : { value : 'Magesh'}});
+        
         textBoxEle.nativeElement.value = "Magesh";
-        //textBoxEle.triggerEventHandler('input', { target : { value : 'Magesh'}})
         textBoxEle.triggerEventHandler('input', { target : textBoxEle.nativeElement })
         fixture.detectChanges();
 
