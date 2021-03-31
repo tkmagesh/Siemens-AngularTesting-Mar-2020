@@ -2,7 +2,7 @@ import { TestBed } from "@angular/core/testing"
 import moment from "moment"
 import { ElapsedPipe } from "./elapsed.pipe"
 
-describe("Elapsed Pipe", () => {
+xdescribe("Elapsed Pipe", () => {
     it("Should return elapsed time", () => {
         
         /* const moment = () => ({

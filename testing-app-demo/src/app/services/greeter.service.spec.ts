@@ -2,7 +2,7 @@ import { GreeterService } from "./greeter.service"
 import { TimerService } from "./timer.service"
 import { TestBed } from "@angular/core/testing";
 
-describe("Greeter Service", () => {
+xdescribe("Greeter Service", () => {
     it ("should interact with the timer service when greeted and return 'Have a nice day!", () => {
         //Arrange
             /* const timerSpy = jasmine.createSpyObj("TimerService", {
