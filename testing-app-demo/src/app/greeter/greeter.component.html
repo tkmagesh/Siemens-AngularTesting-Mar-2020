@@ -1,8 +1,8 @@
 <h3>Greeter</h3>
 <hr>
 <label for="">User Name :</label>
-<input type="text" name="" id="" #txtUserName>
-<input type="button" value="Greet" id="btnGreet" (click)="onBtnGreetClick(txtUserName.value)">
+<input type="text" (input)="userName = $any($event.target).value">
+<input type="button" value="Greet" id="btnGreet" (click)="onBtnGreetClick()">
 <div class="highlight">
     <span>{{message}}</span>
 </div>

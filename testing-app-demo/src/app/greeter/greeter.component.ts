@@ -7,8 +7,9 @@ import { Component } from "@angular/core";
 })
 export class GreeterComponent{
     message : string = '';
-    
-    onBtnGreetClick(userName : string){
-        this.message = `Hi ${userName}, Have a nice day!`
+    userName : string = '';
+
+    onBtnGreetClick(){
+        this.message = `Hi ${this.userName}, Have a nice day!`
     }
 }
