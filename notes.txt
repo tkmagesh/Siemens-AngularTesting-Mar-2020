@@ -126,3 +126,13 @@ Testing Rest service calls
         @angular/common/http
             HttpClientModule
             HttpClient
+
+
+Async Operation
+    Non Blocking Operation
+    Callback
+    Promises
+    Async Await
+    Observables (stream of events)
+    
+
