@@ -38,6 +38,7 @@ describe('BugTrackerComponent', () => {
     fixture.detectChanges();
     expect(component.bugs.length).toBe(2);
   });
+  
   it("should update the bugs when a new bug created event triggered [from BugEditComponent]", () => {
     let bugOperationsSpy : BugOperationsService = TestBed.inject(BugOperationsService);
     spyOn(bugOperationsSpy, "getAll").and.returnValue(of([]))
