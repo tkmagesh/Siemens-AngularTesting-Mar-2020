@@ -38,19 +38,20 @@ describe("Greeter Component", () => {
         expect(messageEle.nativeElement.classList.contains('highlight')).toBeTrue();
     });
 
-    it("should display the message for the user", () => {
+    /* it("should display the message for the user", () => {
         component.onBtnGreetClick('Magesh');
         fixture.detectChanges();
         let messageEle = el.query(By.css('div.highlight'));
         let span = messageEle.query(By.css('span'));
         expect(span.nativeElement.textContent).toBe('Hi Magesh, Have a nice day!');
-    });
+    }); */
 
     it("should display the message for the userName in the textbox", () => {
         let textBoxEle = el.query(By.css('input[type="text"]'));
         textBoxEle.nativeElement.value = "Magesh";
-        //fixture.detectChanges();
-        console.dir(textBoxEle.nativeElement);
+        //textBoxEle.triggerEventHandler('input', { target : { value : 'Magesh'}})
+        textBoxEle.triggerEventHandler('input', { target : textBoxEle.nativeElement })
+        fixture.detectChanges();
 
         let btnGreet = el.query(By.css('#btnGreet'));
         btnGreet.triggerEventHandler('click', { button : 0 });
