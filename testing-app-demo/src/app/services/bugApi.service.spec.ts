@@ -53,5 +53,9 @@ describe('Bug Api Service', () => {
         expect(req.request.method).toBe('GET');
         req.flush(bugMockData.find(bug => bug.id == 3) || {});
         httpTestingController.verify()
+    });
+
+    it('Should save a new bug', () => {
+        
     })
 })

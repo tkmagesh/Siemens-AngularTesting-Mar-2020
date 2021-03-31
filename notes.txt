@@ -12,6 +12,8 @@ Observables
 Rxjs Pipes
 Lifecycle methods
 Promises
+Subjects
+BehaviorSubject
 
 ob$.pipe(
     map(),
